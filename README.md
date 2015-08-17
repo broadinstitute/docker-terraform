@@ -12,7 +12,7 @@ http://www.terraform.io/
 
 ## Dockerfile
 
-This Docker image is based on the official [alpine:3.2][2] base image.
+This Docker image is based on the official [ubuntu:14.04][2] base image.
 
 ## Terraform configuration files
 
@@ -117,4 +117,4 @@ docker run -it --rm broadinstitute/terraform version
 ```
 
 [1]: http://www.terraform.io/ "TerraForm"
-[2]: https://registry.hub.docker.com/_/alpine "alpine:3.2"
+[2]: https://registry.hub.docker.com/_/ubuntu "ubuntu:14.04"
