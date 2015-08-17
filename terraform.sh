@@ -49,4 +49,4 @@ if [ $CERTS -eq 1 ];
     INCLUDECERTS="-v ${CERTS_DIR}:/etc/ssl/certs:ro --net=host"
 fi
 
-echo $SUDO docker run $TTY --rm -v $DATA_FQP:/data $INCLUDECERTS $DOCKER_IMAGE $@
+$SUDO docker run $TTY --rm -v $DATA_FQP:/data $INCLUDECERTS $DOCKER_IMAGE $@

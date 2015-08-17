@@ -1,8 +1,9 @@
-FROM alpine:3.2
+FROM ubuntu:14.04
 
 MAINTAINER Andrew Teixeira <teixeira@broadinstitute.org>
 
-ENV TERRAFORM_VERSION 0.6.1
+ENV TERRAFORM_VERSION=0.6.3 \
+    DEBIAN_FRONTEND=noninteractive
 
 VOLUME ["/data"]
 
@@ -12,11 +13,13 @@ ENTRYPOINT ["/usr/bin/terraform"]
 
 CMD ["--help"]
 
-RUN apk add --update wget
+RUN apt-get update && \
+    apt-get -yq install wget \
     unzip \
     ca-certificates && \
     wget -P /tmp http://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
-    rm -f /var/cache/apk/*
+    apt-get -yq clean && \
+    rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/*
