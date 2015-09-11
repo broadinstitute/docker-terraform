@@ -15,6 +15,7 @@ CMD ["--help"]
 
 RUN apt-get update && \
     apt-get -yq install wget \
+    git \
     unzip \
     ca-certificates && \
     wget -P /tmp http://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-CERT_COMMANDS=( apply plan push refresh remote taint )
-CERTS=0
 DOCKER_IMAGE='broadinstitute/terraform:latest'
 SUDO=
 
@@ -15,6 +13,14 @@ usage() {
 
 if [ "$TERM" != "dumb" ] ; then
     TTY='-it'
+fi
+
+EXTRA_ENV=
+if [ -z "${ATLAS_TOKEN}" ]; then
+    echo "ATLAS_TOKEN has not been set."
+    exit 1
+else
+    EXTRA_ENV="-e ATLAS_TOKEN=${ATLAS_TOKEN}"
 fi
 
 if [ ! -w "${DOCKER_SOCKET}" ];
@@ -35,18 +41,4 @@ if [ ! -d "${DATA_FQP}" ];
     exit 2
 fi
 
-for c in "${CERT_COMMANDS[@]}";
-do
-    if [ "$1" == "$c" ];
-        then
-        CERTS=1
-    fi
-done
-
-INCLUDECERTS=
-if [ $CERTS -eq 1 ];
-    then
-    INCLUDECERTS="-v ${CERTS_DIR}:/etc/ssl/certs:ro --net=host"
-fi
-
-$SUDO docker run $TTY --rm -v $DATA_FQP:/data $INCLUDECERTS $DOCKER_IMAGE $@
+$SUDO docker run $TTY --rm -v $DATA_FQP:/data $EXTRA_ENV $DOCKER_IMAGE $@
