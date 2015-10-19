@@ -1,5 +1,5 @@
 # broadinstitute/docker-terraform
-[![](https://badge.imagelayers.io/broadinstitute/terraform:0.6.1.svg)](https://imagelayers.io/?images=broadinstitute/terraform:0.6.1 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/broadinstitute/terraform:0.6.4.svg)](https://imagelayers.io/?images=broadinstitute/terraform:0.6.4 'Get your own badge on imagelayers.io')
 [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/broadinstitute/terraform/)
 
 ## What is terraform
