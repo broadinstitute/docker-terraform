@@ -1,10 +1,10 @@
 # broadinstitute/docker-terraform
-[![](https://badge.imagelayers.io/broadinstitute/terraform:0.6.4.svg)](https://imagelayers.io/?images=broadinstitute/terraform:0.6.4 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/broadinstitute/terraform:0.6.6.svg)](https://imagelayers.io/?images=broadinstitute/terraform:0.6.6 'Get your own badge on imagelayers.io')
 [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/broadinstitute/terraform/)
 
 ## What is terraform
 
-[TerraForm][1] provides a common configuration to launch infrastructure — from physical and virtual servers to email and DNS providers. Once launched, [TerraForm][1] safely and efficiently changes infrastructure as the configuration is evolved.
+[TerraForm][1] provides a common configuration to launch infrastructure from physical and virtual servers to email and DNS providers. Once launched, [TerraForm][1] safely and efficiently changes infrastructure as the configuration is evolved.
 
 Simple file based configuration gives you a single view of your entire infrastructure.
 

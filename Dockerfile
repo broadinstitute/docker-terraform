@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 MAINTAINER Andrew Teixeira <teixeira@broadinstitute.org>
 
-ENV TERRAFORM_VERSION=0.6.4 \
+ENV TERRAFORM_VERSION=0.6.6 \
     DEBIAN_FRONTEND=noninteractive
 
 VOLUME ["/data"]
