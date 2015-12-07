@@ -1,6 +1,7 @@
 # broadinstitute/docker-terraform
-[![](https://badge.imagelayers.io/broadinstitute/terraform:0.6.6.svg)](https://imagelayers.io/?images=broadinstitute/terraform:0.6.6 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/broadinstitute/terraform:0.6.8.svg)](https://imagelayers.io/?images=broadinstitute/terraform:0.6.8 'Get your own badge on imagelayers.io')
 [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/broadinstitute/terraform/)
+[![Docker Hub](http://img.shields.io/docker/pulls/broadinstitute/terraform.svg)](https://registry.hub.docker.com/u/broadinstitute/terraform/)
 
 ## What is terraform
 
@@ -12,7 +13,7 @@ http://www.terraform.io/
 
 ## Dockerfile
 
-This Docker image is based on the official [ubuntu:14.04][2] base image.
+This Docker image is based on the official [Alpine][2] 3.2 base image.
 
 ## Terraform configuration files
 
@@ -117,4 +118,4 @@ docker run -it --rm broadinstitute/terraform version
 ```
 
 [1]: http://www.terraform.io/ "TerraForm"
-[2]: https://registry.hub.docker.com/_/ubuntu "ubuntu:14.04"
+[2]: https://registry.hub.docker.com/_/alpine "Alpine"
