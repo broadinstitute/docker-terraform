@@ -1,5 +1,5 @@
 # broadinstitute/docker-terraform
-[![](https://badge.imagelayers.io/broadinstitute/terraform:0.6.8.svg)](https://imagelayers.io/?images=broadinstitute/terraform:0.6.8 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/broadinstitute/terraform:0.6.9.svg)](https://imagelayers.io/?images=broadinstitute/terraform:0.6.9 'Get your own badge on imagelayers.io')
 [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/broadinstitute/terraform/)
 [![Docker Hub](http://img.shields.io/docker/pulls/broadinstitute/terraform.svg)](https://registry.hub.docker.com/u/broadinstitute/terraform/)
 
