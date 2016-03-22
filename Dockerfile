@@ -2,7 +2,7 @@ FROM alpine:3.2
 
 MAINTAINER Andrew Teixeira <teixeira@broadinstitute.org>
 
-ENV TERRAFORM_VERSION=0.6.12
+ENV TERRAFORM_VERSION=0.6.13
 
 VOLUME ["/data"]
 
