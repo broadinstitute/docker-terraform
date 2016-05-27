@@ -23,20 +23,19 @@ else
     EXTRA_ENV="-e ATLAS_TOKEN=${ATLAS_TOKEN}"
 fi
 
-if [ ! -w "${DOCKER_SOCKET}" ];
-then
-    SUDO='sudo'
+if [ `uname -s` != "Darwin" ]; then
+    if [ ! -w "${DOCKER_SOCKET}" ]; then
+        SUDO='sudo'
+    fi
 fi
 
-if [ -z "$1" ];
-    then
+if [ -z "$1" ]; then
     usage
     exit 1
 fi
 
 DATA_FQP="$( cd -P "${DATA_DIR}" && pwd )"
-if [ ! -d "${DATA_FQP}" ];
-    then
+if [ ! -d "${DATA_FQP}" ]; then
     echo "Directory `${DATA_FQP}` does not exist...exiting."
     exit 2
 fi
