@@ -1,7 +1,5 @@
 FROM alpine:3.2
 
-MAINTAINER Andrew Teixeira <teixeira@broadinstitute.org>
-
 ENV TERRAFORM_VERSION=0.7.0
 
 VOLUME ["/data"]
@@ -23,3 +21,5 @@ RUN apk update && \
     unzip /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/*
+
+LABEL org.broadinstitute.terraform.vcs-url="https://github.com/broadinstitute/docker-terraform"

@@ -1,11 +1,11 @@
 # broadinstitute/docker-terraform
-[![](https://badge.imagelayers.io/broadinstitute/terraform:latest.svg)](https://imagelayers.io/?images=broadinstitute/terraform:latest 'Get your own badge on imagelayers.io')
-[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/broadinstitute/terraform/)
-[![Docker Hub](http://img.shields.io/docker/pulls/broadinstitute/terraform.svg)](https://registry.hub.docker.com/u/broadinstitute/terraform/)
+[![](https://images.microbadger.com/badges/image/broadinstitute/terraform.svg)](http://microbadger.com/images/broadinstitute/terraform "Get your own image badge on microbadger.com")
+[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/broadinstitute/terraform/)
+[![Docker Hub](http://img.shields.io/docker/pulls/broadinstitute/terraform.svg)](https://hub.docker.com/r/broadinstitute/terraform/)
 
 ## What is terraform
 
-[TerraForm][1] provides a common configuration to launch infrastructure from physical and virtual servers to email and DNS providers. Once launched, [TerraForm][1] safely and efficiently changes infrastructure as the configuration is evolved.
+[Terraform][1] provides a common configuration to launch infrastructure from physical and virtual servers to email and DNS providers. Once launched, [Terraform][1] safely and efficiently changes infrastructure as the configuration is evolved.
 
 Simple file based configuration gives you a single view of your entire infrastructure.
 
@@ -117,5 +117,5 @@ docker run -it --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=hos
 docker run -it --rm broadinstitute/terraform version
 ```
 
-[1]: http://www.terraform.io/ "TerraForm"
+[1]: http://www.terraform.io/ "Terraform"
 [2]: https://registry.hub.docker.com/_/alpine "Alpine"
