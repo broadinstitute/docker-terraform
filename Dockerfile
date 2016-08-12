@@ -22,4 +22,4 @@ RUN apk update && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/*
 
-LABEL org.broadinstitute.terraform.vcs-url="https://github.com/broadinstitute/docker-terraform"
+LABEL org.label-schema.vcs-url="https://github.com/broadinstitute/docker-terraform"

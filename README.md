@@ -1,6 +1,6 @@
 # broadinstitute/docker-terraform
 [![](https://images.microbadger.com/badges/image/broadinstitute/terraform.svg)](http://microbadger.com/images/broadinstitute/terraform "Get your own image badge on microbadger.com")
-[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/broadinstitute/terraform/)
+[![](https://images.microbadger.com/badges/version/broadinstitute/terraform.svg)](https://hub.docker.com/r/broadinstitute/terraform/)
 [![Docker Hub](http://img.shields.io/docker/pulls/broadinstitute/terraform.svg)](https://hub.docker.com/r/broadinstitute/terraform/)
 
 ## What is terraform
