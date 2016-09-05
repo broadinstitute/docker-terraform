@@ -1,6 +1,6 @@
 FROM alpine:3.2
 
-ENV TERRAFORM_VERSION=0.7.0
+ENV TERRAFORM_VERSION=0.7.1
 
 VOLUME ["/data"]
 
@@ -9,6 +9,8 @@ WORKDIR /data
 ENTRYPOINT ["/usr/bin/terraform"]
 
 CMD ["--help"]
+
+ADD prom-run /
 
 RUN apk update && \
     apk add bash \
@@ -21,8 +23,3 @@ RUN apk update && \
     unzip /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/*
-
-ARG VCS_REF
-
-LABEL org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.vcs-url="https://github.com/broadinstitute/docker-terraform"
