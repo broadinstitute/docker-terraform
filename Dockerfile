@@ -10,6 +10,8 @@ ENTRYPOINT ["/usr/bin/terraform"]
 
 CMD ["--help"]
 
+ADD prom-run /
+
 RUN apk update && \
     apk add bash \
     ca-certificates \
@@ -21,8 +23,3 @@ RUN apk update && \
     unzip /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/*
-
-ARG VCS_REF
-
-LABEL org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.vcs-url="https://github.com/broadinstitute/docker-terraform"
