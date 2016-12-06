@@ -18,7 +18,8 @@ RUN apk update && \
     git \
     openssl \
     unzip \
-    wget && \
+    wget \
+    perl && \
     wget -P /tmp https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -rf /tmp/* && \
