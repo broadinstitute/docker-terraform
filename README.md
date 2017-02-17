@@ -13,7 +13,7 @@ http://www.terraform.io/
 
 ## Dockerfile
 
-This Docker image is based on the official [Alpine][2] 3.2 base image.
+This Docker image is based on the official [Alpine][2] 3.5 base image.
 
 ## Terraform configuration files
 
