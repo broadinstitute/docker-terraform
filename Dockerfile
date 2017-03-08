@@ -1,6 +1,6 @@
-FROM alpine:3.2
+FROM alpine:3.5
 
-ENV TERRAFORM_VERSION=0.8.4
+ENV TERRAFORM_VERSION=0.8.8
 
 VOLUME ["/data"]
 
@@ -13,14 +13,17 @@ CMD ["--help"]
 ADD prom-run /
 
 RUN apk update && \
-    apk add bash \
+    apk add \
+    bash \
     ca-certificates \
     git \
     openssl \
     unzip \
     wget \
     perl && \
-    wget -P /tmp https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+    cd /tmp && \
+    wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -rf /tmp/* && \
+    rm -rf /cache/apk/* && \
     rm -rf /var/tmp/*
