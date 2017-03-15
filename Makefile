@@ -4,7 +4,7 @@
 	docker build -t quay.io/weaveworks/docker-terraform:$(shell ./tools/image-tag) .
 
 prom-run:
-	go build ./vendor/github.com/tomwilkie/prom-run
+	go build ./src/prom-run
 
 clean:
 	rm -f .uptodate prom-run

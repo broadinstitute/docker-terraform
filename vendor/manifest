@@ -107,14 +107,6 @@
 			"notests": true
 		},
 		{
-			"importpath": "github.com/tomwilkie/prom-run",
-			"repository": "https://github.com/tomwilkie/prom-run",
-			"vcs": "git",
-			"revision": "1e15c08f93a0286d8945b784ccad2dbdf0000def",
-			"branch": "master",
-			"notests": true
-		},
-		{
 			"importpath": "golang.org/x/net/context",
 			"repository": "https://go.googlesource.com/net",
 			"vcs": "git",

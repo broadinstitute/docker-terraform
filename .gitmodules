@@ -1,0 +1,3 @@
+[submodule "src/prom-run"]
+	path = src/prom-run
+	url = https://github.com/tomwilkie/prom-run

@@ -1,17 +1,5 @@
 FROM alpine:3.5
-
 ENV TERRAFORM_VERSION=0.8.8
-
-VOLUME ["/data"]
-
-WORKDIR /data
-
-ENTRYPOINT ["/usr/bin/terraform"]
-
-CMD ["--help"]
-
-ADD prom-run /
-
 RUN apk update && \
     apk add \
     bash \
@@ -27,3 +15,7 @@ RUN apk update && \
     rm -rf /tmp/* && \
     rm -rf /cache/apk/* && \
     rm -rf /var/tmp/*
+
+ADD prom-run /
+ENTRYPOINT ["/usr/bin/terraform"]
+CMD ["--help"]
