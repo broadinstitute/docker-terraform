@@ -1,3 +1,4 @@
 config.sh
 .terraform
+*.tfstate.backup
 new_plan
