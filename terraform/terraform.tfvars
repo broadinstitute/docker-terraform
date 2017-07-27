@@ -1,0 +1,5 @@
+region        = "eu-west-1"
+name          = "nginx"
+ami           = "ami-d7b9a2b1"
+instance_type = "t2.micro"
+key_name      = "terraform"

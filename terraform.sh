@@ -1,6 +1,11 @@
 #!/bin/bash
 
-DOCKER_IMAGE='broadinstitute/terraform:latest'
+IMAGE_NAME="terraformtask"
+IMAGE_ID=$(docker images -q $IMAGE_NAME)
+if [ -z "$IMAGE_ID" ]; then
+  docker build -t $IMAGE_NAME .
+fi
+
 SUDO=
 
 SCRIPT_DIR="$( cd -P "$( dirname "$BASH_SOURCE[0]" )" && pwd )"
@@ -15,20 +20,6 @@ if [ "$TERM" != "dumb" ] ; then
     TTY='-it'
 fi
 
-EXTRA_ENV=
-if [ -z "${ATLAS_TOKEN}" ]; then
-    echo "ATLAS_TOKEN has not been set."
-    exit 1
-else
-    EXTRA_ENV="-e ATLAS_TOKEN=${ATLAS_TOKEN}"
-fi
-
-if [ `uname -s` != "Darwin" ]; then
-    if [ ! -w "${DOCKER_SOCKET}" ]; then
-        SUDO='sudo'
-    fi
-fi
-
 if [ -z "$1" ]; then
     usage
     exit 1
@@ -40,4 +31,7 @@ if [ ! -d "${DATA_FQP}" ]; then
     exit 2
 fi
 
-$SUDO docker run $TTY --rm -v $DATA_FQP:/data $EXTRA_ENV $DOCKER_IMAGE $@
+$SUDO docker run $TTY --rm \
+-e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" \
+-e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
+-v $DATA_FQP:/data $IMAGE_NAME $@
