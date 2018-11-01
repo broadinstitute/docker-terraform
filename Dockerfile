@@ -17,19 +17,12 @@ RUN apk update && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -rf /tmp/* && \
     rm -rf /var/cache/apk/* && \
-    rm -rf /var/tmp/*
+    rm -rf /var/tmp/* && \
+    wget https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.zip -O /tmp/google-cloud-sdk.zip && \
+    cd /usr/local && unzip /tmp/google-cloud-sdk.zip && \
+    google-cloud-sdk/install.sh --usage-reporting=false --path-update=true --bash-completion=true && \
+    google-cloud-sdk/bin/gcloud config set --installation component_manager/disable_update_check true
 
-
-# https://stackoverflow.com/questions/28372328/how-to-install-the-google-cloud-sdk-in-a-docker-image
-# Downloading gcloud package
-RUN curl https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz > /tmp/google-cloud-sdk.tar.gz
-
-# Installing the package
-RUN mkdir -p /usr/local/gcloud \
-  && tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
-  && /usr/local/gcloud/google-cloud-sdk/install.sh
-
-# Adding the package path to local
 ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
 ARG VCS_REF
