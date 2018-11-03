@@ -13,7 +13,7 @@ http://www.terraform.io/
 
 ## Dockerfile
 
-This Docker image is based on the official [Alpine][2] 3.2 base image.
+This Docker image is based on the official [Alpine][2] 3.8 base image.
 
 ## Terraform configuration files
 
@@ -33,7 +33,7 @@ Some, however, require higher network privileges and SSL certificates to functio
 docker run -it --rm -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host broadinstitute/terraform [--version] [--help] <command> [<args>]
 ```
 
-Therefore, the repository used to build this container also contains a usedful `terraform.sh` script that will handle most of this so that the commands can be much shorter.  All that is required is filling in a `config.sh` script so that the script will know where the `/data` directory is located as well as the path to the SSL certificates.  The script will then determine whether each individual run requires the certificates as well as things like `sudo`, etc.  Therefore, for the commands below, you could substitute the `terraform.sh` script for everything but the command and options.  For example, if you have the `config.sh` correctly configured, you could do the following to run the **apply** command:
+therefore, the repository used to build this container also contains a usefull `terraform.sh` script that will handle most of this, so that the commands can be much shorter.  All that is required is filling in a `config.sh` script, so that the script will know where the `/data` directory is located, as well as the path to the SSL certificates.  The script will then determine whether each individual run requires the certificates, as well as things like `sudo`, etc.  Therefore, for the commands below, you could substitute the `terraform.sh` script for everything but the command and options.  For example, if you have the `config.sh` correctly configured, you could do the following to run the **apply** command:
 
 ```
 ./terraform.sh apply [options]
