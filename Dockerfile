@@ -11,6 +11,10 @@ ENTRYPOINT ["/usr/bin/terraform"]
 
 CMD ["--help"]
 
+ENV PATH = $PATH:/usr/local/google-cloud-sdk/bin
+ENV PATH = $PATH:/usr/local/go/bin
+ENV GOPATH /root/go
+
 RUN apt-get update -y && \
     apt-get install -y curl jq python bash ca-certificates git openssl unzip wget && \
     cd /tmp && \
@@ -21,13 +25,13 @@ RUN apt-get update -y && \
     google-cloud-sdk/install.sh --usage-reporting=false --path-update=true --bash-completion=true && \
     google-cloud-sdk/bin/gcloud config set --installation component_manager/disable_update_check true && \
     wget https://dl.google.com/go/${GO_VERSION}.linux-amd64.tar.gz && tar -xzvf ${GO_VERSION}.linux-amd64.tar.gz -C /usr/local && \
-    /usr/local/google-cloud-sdk/bin/gcloud components install kubectl && /usr/local/go/bin/go get -u github.com/banzaicloud/terraform-provider-k8s && \
+    /usr/local/google-cloud-sdk/bin/gcloud components install kubectl && \
+    /usr/local/go/bin/go get -u github.com/banzaicloud/terraform-provider-k8s && \
     rm -rf /tmp/* && \
     apt-get clean && \
     rm -rf /var/tmp/*
 
-ENV PATH = $PATH:/usr/local/google-cloud-sdk/bin/
-ENV PATH = $PATH:/usr/local/go/bin/
+COPY terraformrc.txt /root/.terraformrc
 
 ARG VCS_REF
 

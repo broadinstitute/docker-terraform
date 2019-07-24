@@ -1,0 +1,3 @@
+providers {
+  k8s = "/$GOPATH/bin/terraform-provider-k8s"
+}
